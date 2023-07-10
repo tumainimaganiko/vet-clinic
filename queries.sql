@@ -46,3 +46,10 @@ FROM
     animals
 WHERE
     neutered = TRUE;
+
+SELECT
+    *
+FROM
+    animals
+WHERE
+    name != 'Gabumon';
