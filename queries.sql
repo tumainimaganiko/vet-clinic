@@ -39,3 +39,10 @@ FROM
     animals
 WHERE
     weight_kg > 10.5;
+
+SELECT
+    *
+FROM
+    animals
+WHERE
+    neutered = TRUE;
