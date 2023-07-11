@@ -61,3 +61,26 @@ FROM
 WHERE
     weight_kg BETWEEN 10.4
     AND 17.3;
+
+-- Beginning a transaction
+BEGIN;
+
+UPDATE
+    animals
+SET
+    species = 'unspecified';
+
+-- Verifying that change was made
+SELECT
+    *
+FROM
+    animals;
+
+-- Roll Back the change
+ROLLBACK;
+
+-- verifying that the species columns went back to the state before the transaction.
+SELECT
+    *
+FROM
+    animals;
