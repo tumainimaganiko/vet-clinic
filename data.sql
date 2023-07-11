@@ -59,3 +59,43 @@ SET
     species_id = 'Pokemon'
 WHERE
     species_id IS NULL;
+
+UPDATE
+    animals
+SET
+    owner_id = 'Sam Smith'
+WHERE
+    name = 'Agumon';
+
+UPDATE
+    animals
+SET
+    owner_id = 'Jennifer Orwell'
+WHERE
+    name = 'Gabumon'
+    OR name = 'Pikachu';
+
+UPDATE
+    animals
+SET
+    owner_id = 'Bob'
+WHERE
+    name = 'Devimon'
+    OR name = 'Plantmon';
+
+UPDATE
+    animals
+SET
+    owner_id = 'Melody Pond'
+WHERE
+    name = 'Charmander'
+    OR name = 'Squirtle'
+    OR name = 'Blossom';
+
+UPDATE
+    animals
+SET
+    owner_id = 'Dean Winchester'
+WHERE
+    name = 'Angemon'
+    OR name = 'Boarmon';
