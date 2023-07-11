@@ -29,3 +29,13 @@ VALUES
     ('Boarmon', 'Jun 7, 2005', 20.4, TRUE, 7),
     ('Blossom', 'Oct 13, 1998', 17, TRUE, 3),
     ('Ditto', 'May 14, 2022', 22, TRUE, 4);
+
+INSERT INTO
+    owners (full_name, age)
+VALUES
+    ('Sam Smith', 34),
+    ('Jennifer Orwell', 19),
+    ('Bob', 45),
+    ('Melody Pond', 77),
+    ('Dean Winchester', 14),
+    ('Jodie Whittaker', 38);
