@@ -19,7 +19,7 @@
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
-  - [👥 Authors ](#-authors-)
+  - [👤 Author ](#-author-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
@@ -106,7 +106,7 @@ To run the project, execute the following command:
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
+## 👤 Author <a name="author"></a>
 
 👤 **Tumaini Maganiko**
 
