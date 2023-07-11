@@ -98,3 +98,12 @@ SET
     species = 'pokemon'
 WHERE
     species IS NULL;
+
+BEGIN;
+
+-- Deleting all records
+DELETE FROM
+    animals;
+
+-- rolling back the transaction.
+ROLLBACK;
