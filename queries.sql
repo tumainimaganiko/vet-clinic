@@ -173,3 +173,11 @@ FROM
 WHERE
     date_of_birth BETWEEN 'Jan 01,1990'
     AND 'Dec 31,2000';
+
+SELECT
+    name
+FROM
+    animals
+    INNER JOIN owners ON animals.owner_id = owners.full_name
+WHERE
+    animals.owner_id = 'Melody Pond';
