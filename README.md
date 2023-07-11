@@ -98,7 +98,7 @@ To run the project, execute the following command:
 
 
 ```sh
-  connect to you database
+  connect  your database
 ```
 
 
