@@ -189,3 +189,10 @@ FROM
     INNER JOIN species ON animals.species_id = species.name
 WHERE
     animals.species_id = 'Pokemon';
+
+SELECT
+    full_name,
+    name
+FROM
+    animals
+    RIGHT JOIN owners ON animals.owner_id = owners.full_name;
