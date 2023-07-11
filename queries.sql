@@ -205,3 +205,12 @@ FROM
 WHERE
     animals.species_id = 'Digimon'
     AND owners.full_name = 'Jennifer Orwell';
+
+SELECT
+    animals.name
+FROM
+    animals
+    JOIN owners ON animals.owner_id = owners.full_name
+WHERE
+    animals.escape_attempts = 0
+    AND owners.full_name = 'Dean Winchester';
