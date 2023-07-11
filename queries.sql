@@ -214,3 +214,15 @@ FROM
 WHERE
     animals.escape_attempts = 0
     AND owners.full_name = 'Dean Winchester';
+
+SELECT
+    full_name
+FROM
+    animals
+    JOIN owners ON animals.owner_id = owners.full_name
+GROUP BY
+    full_name
+ORDER BY
+    COUNT(animals.owner_id) DESC
+LIMIT
+    1;
