@@ -196,3 +196,12 @@ SELECT
 FROM
     animals
     RIGHT JOIN owners ON animals.owner_id = owners.full_name;
+
+SELECT
+    animals.name
+FROM
+    animals
+    JOIN owners ON animals.owner_id = owners.full_name
+WHERE
+    animals.species_id = 'Digimon'
+    AND owners.full_name = 'Jennifer Orwell';
