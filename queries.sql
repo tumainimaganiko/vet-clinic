@@ -114,5 +114,18 @@ WHERE
     date_of_birth > 'Jan 1, 2022';
 
 SAVEPOINT SP1;
-UPDATE animals SET weight_kg = weight_kg * -1;
+
+UPDATE
+    animals
+SET
+    weight_kg = weight_kg * -1;
+
 ROLLBACK TO SP1;
+
+UPDATE
+    animals
+SET
+    weight_kg = weight_kg * -1
+WHERE
+    weight_kg < 0;
+COMMIT;
