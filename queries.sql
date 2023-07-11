@@ -226,3 +226,12 @@ ORDER BY
     COUNT(animals.owner_id) DESC
 LIMIT
     1;
+
+SELECT
+    animals.species_id,
+    COUNT(animals.species_id) AS animals
+FROM
+    animals
+    JOIN species ON animals.species_id = species.name
+GROUP BY
+    animals.species_id;
