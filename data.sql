@@ -107,3 +107,11 @@ VALUES
     ('Maisy Smith', 26, 'Jan 17,2019'),
     ('Stephanie Mendez', 64, 'May 4,1981'),
     ('Jack Harkness', 38, 'Jun 8,2008');
+
+INSERT INTO
+    specializations (id, name)
+VALUES
+    (1, 'Pokemon'),
+    (3, 'Digimon'),
+    (3, 'Pokemon'),
+(4, 'Digimon');
