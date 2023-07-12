@@ -235,3 +235,18 @@ FROM
     JOIN species ON animals.species_id = species.name
 GROUP BY
     animals.species_id;
+
+SELECT
+    a.name
+FROM
+    animals a
+    JOIN visits v ON a.id = v.animals_id
+    JOIN vets ON vets.id = v.vets_id
+WHERE
+    vets.name = 'William Tatcher'
+GROUP BY
+    a.name
+ORDER BY
+    MAX(v.date_of_visit) DESC
+LIMIT
+    1;
