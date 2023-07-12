@@ -280,3 +280,17 @@ WHERE
     v.date_of_visit BETWEEN 'Apr 1, 2020'
     AND 'Aug 30, 2020'
     AND vets.name = 'Stephanie Mendez';
+
+SELECT
+    a.name,
+    COUNT(*)
+FROM
+    animals a
+    JOIN visits v ON a.id = v.animals_id
+    JOIN vets ON vets.id = v.vets_id
+GROUP BY
+    a.name
+ORDER BY
+    COUNT(*) DESC
+LIMIT
+    1;
