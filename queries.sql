@@ -294,3 +294,18 @@ ORDER BY
     COUNT(*) DESC
 LIMIT
     1;
+
+SELECT
+    a.name
+FROM
+    animals a
+    JOIN visits v ON a.id = v.animals_id
+    JOIN vets ON vets.id = v.vets_id
+WHERE
+    vets.name = 'Maisy Smith'
+GROUP BY
+    a.name
+ORDER BY
+    MIN(v.date_of_visit)
+LIMIT
+    1;
