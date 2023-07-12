@@ -309,3 +309,31 @@ ORDER BY
     MIN(v.date_of_visit)
 LIMIT
     1;
+
+SELECT
+    a.name AS animal_name,
+    a.date_of_birth,
+    a.escape_attempts,
+    a.neutered,
+    a.weight_kg,
+    a.species_id,
+    a.owner_id,
+    ve.name AS vet_name,
+    ve.age,
+    date_of_graduation,
+    v.date_of_visit
+FROM
+    animals a
+    JOIN visits v ON a.id = v.animals_id
+    JOIN vets ve ON ve.id = v.vets_id
+WHERE
+    v.date_of_visit = (
+        SELECT
+            date_of_visit
+        FROM
+            visits
+        ORDER BY
+            date_of_visit DESC
+        LIMIT
+            1
+    );
