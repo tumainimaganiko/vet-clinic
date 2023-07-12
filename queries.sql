@@ -261,3 +261,11 @@ WHERE
     vets.name = 'Stephanie Mendez'
 GROUP BY
     a.name;
+
+SELECT
+    v.name,
+    s.name AS specialties
+FROM
+    vets v
+    RIGHT JOIN specializations s ON v.id = s.id
+    RIGHT JOIN species ON species.name = s.name;
