@@ -61,3 +61,5 @@ CREATE TABLE vets (
     date_of_graduation DATE,
     PRIMARY KEY (id)
 );
+
+CREATE TABLE specializations (id INT, name VARCHAR(50));
