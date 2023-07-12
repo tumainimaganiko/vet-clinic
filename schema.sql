@@ -63,3 +63,5 @@ CREATE TABLE vets (
 );
 
 CREATE TABLE specializations (id INT, name VARCHAR(50));
+
+CREATE TABLE visits (animals_id INT, vets_id INT, date_of_visit DATE);
