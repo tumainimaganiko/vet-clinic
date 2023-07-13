@@ -342,36 +342,39 @@ SELECT
     COUNT(*) AS misfit_visits_count
 FROM
     vets
-    LEFT JOIN specializations s ON vets.id = s.id
+    LEFT JOIN specializations s ON vets.id = s.vet_id
     JOIN visits v ON vets.id = v.vets_id
     JOIN animals a ON a.id = v.animals_id
+    LEFT JOIN species ON species.id = s.species_id
 WHERE
-    s.id IS NULL
+    s.vet_id IS NULL
     OR (
-        s.name != a.species_id
-        AND s.id != (
+        a.species_id != species.name
+        AND s.vet_id != (
             SELECT
-                s.id
+                s.vet_id
             FROM
                 specializations s
             GROUP BY
-                s.id
+                s.vet_id
             HAVING
-                COUNT(s.id) = (
+                COUNT(s.vet_id) = (
                     SELECT
                         MAX(count_id)
                     FROM
                         (
                             SELECT
-                                COUNT(s.id) AS count_id
+                                COUNT(s.vet_id) AS count_id
                             FROM
                                 specializations s
                             GROUP BY
-                                s.id
+                                s.vet_id
                         ) AS count_ids
                 )
         )
     );
+
+;
 
 SELECT
     a.species_id AS recommended_specialty
