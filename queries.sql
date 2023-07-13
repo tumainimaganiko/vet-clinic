@@ -337,3 +337,38 @@ WHERE
         LIMIT
             1
     );
+
+SELECT
+    COUNT(*) AS misfit_visits_count
+FROM
+    vets
+    LEFT JOIN specializations s ON vets.id = s.id
+    JOIN visits v ON vets.id = v.vets_id
+    JOIN animals a ON a.id = v.animals_id
+WHERE
+    s.id IS NULL
+    OR (
+        s.name != a.species_id
+        AND s.id != (
+            SELECT
+                s.id
+            FROM
+                specializations s
+            GROUP BY
+                s.id
+            HAVING
+                COUNT(s.id) = (
+                    SELECT
+                        MAX(count_id)
+                    FROM
+                        (
+                            SELECT
+                                COUNT(s.id) AS count_id
+                            FROM
+                                specializations s
+                            GROUP BY
+                                s.id
+                        ) AS count_ids
+                )
+        )
+    );
