@@ -372,3 +372,18 @@ WHERE
                 )
         )
     );
+
+SELECT
+    a.species_id AS recommended_specialty
+FROM
+    vets
+    JOIN visits v ON vets.id = v.vets_id
+    JOIN animals a ON a.id = v.animals_id
+WHERE
+    vets.name = 'Maisy Smith'
+GROUP BY
+    (a.species_id)
+ORDER BY
+    COUNT(a.species_id) DESC
+LIMIT
+    1;
