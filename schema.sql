@@ -62,6 +62,6 @@ CREATE TABLE vets (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE specializations (id INT, name VARCHAR(50));
+CREATE TABLE specializations ( species_id INT, vet_id INT);
 
 CREATE TABLE visits (animals_id INT, vets_id INT, date_of_visit DATE);
